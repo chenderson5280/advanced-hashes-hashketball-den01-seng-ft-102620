@@ -189,24 +189,19 @@ def player_stats (given_name)
   end
 end
 
-
 def big_shoe_rebounds
 big_foot = 0
-result = []
+#result = []
 game_hash.each do |location, data|
   data[:players].map do |inner_hash|
     if inner_hash[:shoe] > big_foot
-    big_foot = inner_hash[:shoe]
-  end
-#  binding.pry
-  if inner_hash[:shoe] = big_foot
-  result = inner_hash[:rebounds] -1
-end
-#data[:players].each do |inner_hash|
-  # inner_hash[:shoe] = big_foot
-    #binding.pry
-     #return inner_hash[:rebounds]
+      big_foot = inner_hash[:shoe]
+    end
+    if inner_hash[:shoe] = big_foot
+      big_foot = inner_hash[:rebounds]
+    end
+
   end
 end
-result
+big_foot
 end
